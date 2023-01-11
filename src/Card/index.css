@@ -1,9 +1,4 @@
 .card {
-	height: 7em;
-	width: 5em;
-	outline: 1px solid black;
-	border-radius: 5%;
-	
 	display: grid;
 	grid-template-columns: 1fr 3.25fr 1 fr;
 	grid-template-rows: 1fr 5fr 1fr;
@@ -11,8 +6,16 @@
 		"label-upper . ."
 		". label-main ."
 		". . label-lower";
+	
+	--card-height: 5.25em;
+	--card-width: calc(var(--card-height) / 1.4);
+	height: var(--card-height);
+	width: var(--card-width);
 
 	font-family: 'Quicksand', sans-serif;
+
+	outline: 1px solid black;
+	border-radius: 5%;
 }
 
 .active {
@@ -26,26 +29,23 @@
 	align-items: center;
 	align-content: center;
 
-	font-size: .75em;
-	padding-left: .05em;
-	padding-right: .05em
+	font-size: calc(var(--card-height) / 9);
 }
 
 .card-label-upper {
 	grid-area: label-upper;
-	margin-top: .4em;
+	margin-top: calc(var(--card-height) / 17.5);
 }
 
 .card-label-main {
-	font-size: 2em;
 	grid-area: label-main;
-	padding: 0;
+	font-size: calc(var(--card-height) / 3.5);
 }
 
 .card-label-lower {
 	grid-area: label-lower;
+	margin-bottom: calc(var(--card-height) / 17.5);
 	transform: rotate(180deg);
-	margin-bottom: .4em;
 }
 
 .red-suit {
