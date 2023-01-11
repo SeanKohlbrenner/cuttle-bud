@@ -1,0 +1,57 @@
+.card {
+	height: 7em;
+	width: 5em;
+	outline: 1px solid black;
+	border-radius: 5%;
+	
+	display: grid;
+	grid-template-columns: 1fr 3.25fr 1 fr;
+	grid-template-rows: 1fr 5fr 1fr;
+	grid-template-areas:
+		"label-upper . ."
+		". label-main ."
+		". . label-lower";
+
+	font-family: 'Quicksand', sans-serif;
+}
+
+.active {
+	outline: .15em solid black;
+}
+
+.card-label {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+
+	font-size: .75em;
+	padding-left: .05em;
+	padding-right: .05em
+}
+
+.card-label-upper {
+	grid-area: label-upper;
+	margin-top: .4em;
+}
+
+.card-label-main {
+	font-size: 2em;
+	grid-area: label-main;
+	padding: 0;
+}
+
+.card-label-lower {
+	grid-area: label-lower;
+	transform: rotate(180deg);
+	margin-bottom: .4em;
+}
+
+.red-suit {
+	color: #a60000;
+}
+
+p {
+	margin: 0;
+}

@@ -1,0 +1,8 @@
+#card-action-details {
+	margin: 0 1em 0 1em;
+	height: 13.5vh;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
