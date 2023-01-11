@@ -2,8 +2,6 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	
-	height: 100vh;
 
 	font-family: 'IBM Plex Sans Condensed', sans-serif;
 }
@@ -17,6 +15,7 @@
 @media screen and (min-width: 801px) {
 	#app {
 		justify-content: space-evenly;
+		height: 100vh;
 	}
 }
 
