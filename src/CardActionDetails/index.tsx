@@ -11,7 +11,7 @@ type CardActionDetailsProps = {
 	suit: number
 }
 
-function getScuttleSuits(activeCard: string, suit: number) {
+function getScuttleSuits(suit: number) {
 	switch(suit) {
 		case 1:
 			return "♥\uFE0E, ♦\uFE0E, or ♣\uFE0E";
@@ -25,7 +25,7 @@ function getScuttleSuits(activeCard: string, suit: number) {
 function getScuttleText(activeCard: string, suit: number) {
 	// Special cases: Aces and Clubs
 	if (activeCard === "A") {
-			return "ny A of " + getScuttleSuits(activeCard, suit);
+			return "ny A of " + getScuttleSuits(suit);
 	}
 	if (suit === 4) {
 		// Clubs is the lowest suit and can not scuttle an equal card
@@ -38,10 +38,10 @@ function getScuttleText(activeCard: string, suit: number) {
 	}
 
 	if (activeCard === "2") {
-		return "ny A or " + activeCard + " of " + getScuttleSuits(activeCard, suit);
+		return "ny A or " + activeCard + " of " + getScuttleSuits(suit);
 	}
 	else {
-		return "ny " + (Number(activeCard) - 1) + " or " + activeCard + " of " + getScuttleSuits(activeCard, suit);
+		return "ny " + (Number(activeCard) - 1) + " or " + activeCard + " of " + getScuttleSuits(suit);
 	}
 }
 
