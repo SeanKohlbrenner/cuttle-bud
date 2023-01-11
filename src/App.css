@@ -2,11 +2,22 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	row-gap: 1em;
 	
 	height: 100vh;
 
 	font-family: 'IBM Plex Sans Condensed', sans-serif;
+}
+
+@media screen and (max-width: 800px) {
+	#app {
+		row-gap: 1.25em;
+	}
+}
+
+@media screen and (min-width: 801px) {
+	#app {
+		justify-content: space-evenly;
+	}
 }
 
 	h1 {
