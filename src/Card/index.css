@@ -7,7 +7,7 @@
 		". label-main ."
 		". . label-lower";
 	
-	--card-height: 5.25em;
+	--card-height: 4em;
 	--card-width: calc(var(--card-height) / 1.4);
 	height: var(--card-height);
 	width: var(--card-width);
@@ -34,7 +34,7 @@
 
 .card-label-upper {
 	grid-area: label-upper;
-	margin-top: calc(var(--card-height) / 17.5);
+	margin-top: calc(var(--card-height) / 18);
 }
 
 .card-label-main {
@@ -44,7 +44,7 @@
 
 .card-label-lower {
 	grid-area: label-lower;
-	margin-bottom: calc(var(--card-height) / 17.5);
+	margin-bottom: calc(var(--card-height) / 18);
 	transform: rotate(180deg);
 }
 
