@@ -32,16 +32,16 @@ function Card({cardType, activeCard, setActiveCard, suit}: CardProps) {
 
 	let suitSymbol;
 	if (suit === 1) {
-		suitSymbol = <p>♠</p>
+		suitSymbol = <p>♠&#xFE0E;</p>
 	}
 	else if (suit === 2) {
-		suitSymbol = <p>♥</p>
+		suitSymbol = <p>♥&#xFE0E;</p>
 	}
 	else if (suit === 3) {
-		suitSymbol = <p>♦</p>
+		suitSymbol = <p>♦&#xFE0E;</p>
 	}
 	else {
-		suitSymbol = <p>♣</p>
+		suitSymbol = <p>♣&#xFE0E;</p>
 	}
 
 	return (

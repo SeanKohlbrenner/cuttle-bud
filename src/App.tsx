@@ -107,25 +107,25 @@ function App() {
 						type="button"
 						onClick={() => setSuit(1)}
 					>
-						{suit === 1 ? "\u2660" : "\u2664"}
+						{suit === 1 ? "\u2660\uFE0E" : "\u2664\uFE0E"}
 					</button>
 					<button 
 						type="button"
 						onClick={() => setSuit(2)}
 					>
-						{suit === 2 ? "\u2665" : "\u2661"}
+						{suit === 2 ? "\u2665\uFE0E" : "\u2661\uFE0E"}
 					</button>
 					<button 
 						type="button"
 						onClick={() => setSuit(3)}
 					>
-						{suit === 3 ? "\u2666" : "\u2662"}
+						{suit === 3 ? "\u2666\uFE0E" : "\u2662\uFE0E"}
 					</button>
 					<button 
 						type="button"
 						onClick={() => setSuit(4)}
 					>
-						{suit === 4 ? "\u2663" : "\u2667"}
+						{suit === 4 ? "\u2663\uFE0E" : "\u2667\uFE0E"}
 					</button>
 				</div>
 			</div>
