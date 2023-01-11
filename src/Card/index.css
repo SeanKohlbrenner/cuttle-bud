@@ -11,6 +11,7 @@
 	--card-width: calc(var(--card-height) / 1.4);
 	height: var(--card-height);
 	width: var(--card-width);
+	padding: .25em;
 
 	font-family: 'Quicksand', sans-serif;
 
@@ -34,7 +35,6 @@
 
 .card-label-upper {
 	grid-area: label-upper;
-	margin-top: calc(var(--card-height) / 18);
 }
 
 .card-label-main {
@@ -44,7 +44,6 @@
 
 .card-label-lower {
 	grid-area: label-lower;
-	margin-bottom: calc(var(--card-height) / 18);
 	transform: rotate(180deg);
 }
 
