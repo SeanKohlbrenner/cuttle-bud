@@ -11,7 +11,7 @@ type CardActionDetailsProps = {
 	suit: number
 }
 
-function getScuttleSuits(suit: number) {
+function getScuttleSuits(activeCard: string, suit: number) {
 	switch(suit) {
 		case 1:
 			return "♥\uFE0E, ♦\uFE0E, or ♣\uFE0E";
@@ -23,14 +23,25 @@ function getScuttleSuits(suit: number) {
 }
 
 function getScuttleText(activeCard: string, suit: number) {
+	// Special cases: Aces and Clubs
 	if (activeCard === "A") {
-		return "n A of " + getScuttleSuits(suit);
+			return "ny A of " + getScuttleSuits(activeCard, suit);
 	}
-	else if (activeCard === "2") {
-		return "ny A or " + activeCard + " of " + getScuttleSuits(suit);
+	if (suit === 4) {
+		// Clubs is the lowest suit and can not scuttle an equal card
+		if (activeCard === "2") {
+			return "ny A";
+		}
+		else {
+			return "ny " + (Number(activeCard) - 1);
+		}
+	}
+
+	if (activeCard === "2") {
+		return "ny A or " + activeCard + " of " + getScuttleSuits(activeCard, suit);
 	}
 	else {
-		return "ny " + (Number(activeCard) - 1) + " or " + activeCard + " of " + getScuttleSuits(suit);
+		return "ny " + (Number(activeCard) - 1) + " or " + activeCard + " of " + getScuttleSuits(activeCard, suit);
 	}
 }
 
@@ -43,9 +54,11 @@ function CardActionDetails({ activeCard, suit }: CardActionDetailsProps) {
 					{POINT_CARDS.includes(activeCard) &&
 						<>
 							<p><strong>Point Card:</strong> Play for {activeCard === "A" ? "1 point" : activeCard + " points"}</p>
-						{suit !== 4 &&
-								<p><strong>Scuttle:</strong> Play to remove a{getScuttleText(activeCard, suit)}</p>
-						}
+							{(activeCard !== "A" || suit !== 4) && 
+								<p>
+									<strong>Scuttle:</strong> Play to remove a{getScuttleText(activeCard, suit)}
+								</p>
+							}
 						</>
 					}
 					{Object.keys(ONE_OFF_EFFECTS).includes(activeCard) &&
