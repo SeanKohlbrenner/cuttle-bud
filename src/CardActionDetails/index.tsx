@@ -14,11 +14,11 @@ type CardActionDetailsProps = {
 function getScuttleSuits(suit: number) {
 	switch(suit) {
 		case 1:
-			return "♥, ♦, or ♣";
+			return "♥\uFE0E, ♦\uFE0E, or ♣\uFE0E";
 		case 2:
-			return "♦ or ♣";
+			return "♦\uFE0E or ♣\uFE0E";
 		default:
-			return "♣";
+			return "♣\uFE0E";
 	}
 }
 
