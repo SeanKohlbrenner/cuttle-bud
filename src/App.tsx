@@ -10,7 +10,7 @@ function App() {
 
   return (
     <div id="app">
-			<h1>Cuttle Cards</h1>
+			<h1>Cuttle Bud</h1>
 			<CardActionDetails activeCard={activeCard} suit={suit} />
       <div id="card-grid">
 				<div className="column-3">
